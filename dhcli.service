@@ -1,0 +1,14 @@
+[Unit]
+Description=dhclient
+After=network.target
+StartLimitIntervalSec=0[Service]
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=/sbin/dhclient
+
+[Install]
+WantedBy=multi-user.target
